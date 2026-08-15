@@ -48,3 +48,62 @@ body {
 .navbarTogglerActive > span:nth-child(3) {
   @apply top-[-8px] rotate-[135deg];
 }
+
+/* ==== Product catalogue carousels ==== */
+
+.catalogue-carousel {
+  overflow: hidden;
+}
+
+.catalogue-cell {
+  width: 100%;
+  position: relative;
+}
+
+@media (min-width: 960px) {
+  .catalogue-cell {
+    width: 50%;
+  }
+}
+
+/* divider between the two visible panels, inset from the card edges */
+.catalogue-cell::after {
+  content: "";
+  position: absolute;
+  top: 2.5rem;
+  bottom: 2.5rem;
+  right: 0;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.catalogue-cell:last-child::after {
+  display: none;
+}
+
+.catalogue-carousel .flickity-button {
+  background: transparent;
+  color: #fff !important;
+}
+
+.catalogue-carousel .flickity-button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.catalogue-carousel .flickity-button:disabled {
+  opacity: 0.25;
+}
+
+.catalogue-carousel .flickity-prev-next-button {
+  top: 50% !important;
+  width: 42px;
+  height: 42px;
+}
+
+.catalogue-carousel .flickity-prev-next-button.previous {
+  left: 4px;
+}
+
+.catalogue-carousel .flickity-prev-next-button.next {
+  right: 4px;
+}
